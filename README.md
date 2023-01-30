@@ -16,8 +16,8 @@ Calculate the nth Fibonacci number.
 
   Second version of the calculation.
 
-  F(2n) = (2F(n) + F(n - 1)) * F(n)
 
+  F(2n) = (2F(n) + F(n - 1)) * F(n)
   F(2n - 1) = F(n - 1)² + F(n)²
 
 - FibT.java
@@ -27,6 +27,8 @@ Calculate the nth Fibonacci number.
   Does essentially the same as FibN.java,
   but first generate quick path from top to bottom
   before calculating from bottom to top using the path.
+
+  Now also work with negative nth Fibonacci.
 
 ## Usage
 
@@ -46,4 +48,4 @@ java FibT.java 10000
 
 ## Last Readme update
 
-- Date: 21-01-2023 dd-MM-yyyy
+- Date: 30-01-2023 dd-MM-yyyy

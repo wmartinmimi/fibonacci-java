@@ -37,14 +37,41 @@ class FibT{
     }
   }
 
+  static class Just0 extends Cal{
+    @Override
+    void cal(){
+      fn = BigInteger.ZERO;
+    }
+  }
+
+  static class Negate extends Cal{
+    @Override
+    void cal(){
+      fn = fn.negate();
+    }
+  }
+
   static class FibTree{
     Cal entry;
     static final BigInteger two = BigInteger.valueOf(2);
 
     FibTree(BigInteger n){
       Cal next;
+      switch (n.signum()){
+        case 0:
+        entry = new Just0();
+        return;
+        case -1:
+        if (n.remainder(two).equals(BigInteger.ZERO)) {
+          entry = new Negate();
+        }
+        break;
+      }
+      n = n.abs();
       if (n.compareTo(two) <= 0){
+        next = entry;
         entry = new Just1();
+        entry.next = next;
         return;
       }
       while (!n.equals(two)){
@@ -64,7 +91,7 @@ class FibT{
     BigInteger cal(){
       BigInteger fn = BigInteger.ONE;
       BigInteger fnm1 = BigInteger.ONE;
-      BigInteger debug_n = BigInteger.ZERO;
+      //BigInteger debug_n = BigInteger.ZERO;
       while (entry != null){
         entry.fn = fn;
         entry.fnm1 = fnm1;
@@ -73,7 +100,7 @@ class FibT{
         fnm1 = entry.fnm1;
         //println("fn: " + fn.toString() + " fnm1: " + fnm1.toString());
         entry = entry.next;
-        debug_n = debug_n.add(BigInteger.ONE);
+        //debug_n = debug_n.add(BigInteger.ONE);
         //println("next!" + debug_n.toString());
       }
       return fn;
