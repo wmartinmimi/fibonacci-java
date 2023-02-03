@@ -2,7 +2,9 @@
 
 ## Description
 
-Calculate the nth Fibonacci number.
+Calculate the nth Fibonacci number using java.
+
+A fun simple project I played with.
 
 ## Files
 
@@ -32,20 +34,28 @@ Calculate the nth Fibonacci number.
 
 ## Usage
 
+```bash
 java Fib.java <n>
+```
 
 or
 
+```bash
 java FibN.java <n>
+```
 
 or
 
+```bash
 java FibT.java <n>
+```
 
 Example
 
+```bash
 java FibT.java 10000
+```
 
 ## Last Readme update
 
-- Date: 30-01-2023 dd-MM-yyyy
+- Date: 03-02-2023 dd-MM-yyyy
